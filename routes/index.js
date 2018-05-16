@@ -27,6 +27,7 @@ request.on('error', function(error) {
 
 request.end();*/
 var express = require('express');
+var router = express.Router();
 var bodyParser = require('body-parser');
 var path = require('path');
 const port = 3000;
