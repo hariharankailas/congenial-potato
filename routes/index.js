@@ -27,12 +27,12 @@ request.on('error', function(error) {
 
 request.end();*/
 var express = require('express');
-var router = express.Router();
+var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 const port = 3000;
 
-var app = express();
+var router = express.Router();
 var apiai = require('apiai');
 var apiapp = apiai("d92b6db3d22745a78f064f96fce19db4");
 
@@ -61,6 +61,8 @@ app.post('/chat', function(req, res){
   request.end();
 });
 
-app.listen(port, function(){
-  console.log('server started on Port 3000...')
-});
+// app.listen(port, function(){
+//   console.log('server started on Port 3000...')
+// });
+
+module.exports = app;
