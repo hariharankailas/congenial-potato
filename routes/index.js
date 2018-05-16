@@ -25,6 +25,7 @@ request.on('error', function(error) {
 });
 
 request.end();*/
+console.log("start");
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -33,7 +34,7 @@ const port = 3000;
 var app = express();
 var apiai = require('apiai');
 var apiapp = apiai("d92b6db3d22745a78f064f96fce19db4");
-
+console.log("variables initialiezed");
 //Body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -41,7 +42,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/', function(req, res){
   res.send('Hello Salesforce');
 });
-
+console.log("app.get");
 app.post('/chat', function(req, res){
 
   var request = apiapp.textRequest(req.body.chatText, {
