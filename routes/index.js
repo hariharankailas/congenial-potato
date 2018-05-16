@@ -2,12 +2,11 @@
 var router = express.Router();
 
 /* GET home page. */
-/*
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;*/
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
+//
+// module.exports = router;*/
 
 /*var apiai = require('apiai');
 
@@ -27,12 +26,11 @@ request.on('error', function(error) {
 
 request.end();*/
 var express = require('express');
-var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 const port = 3000;
 
-var router = express.Router();
+var app = express();
 var apiai = require('apiai');
 var apiapp = apiai("d92b6db3d22745a78f064f96fce19db4");
 
