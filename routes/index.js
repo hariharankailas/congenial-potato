@@ -43,11 +43,14 @@ app.get('/', function(req, res){
   res.send('Hello Salesforce');
 });
 console.log("app.get");
+
 app.post('/chat', function(req, res){
+  console.log("app-post",req);
 
   var request = apiapp.textRequest(req.body.chatText, {
-    sessionId: '4BGUAgBUD_1NO0WOl8UjukTbKa4C5FdnYYO25tlVNknms6medUzZrGHXsC3FH72'
+    sessionId: '0tjSXk.kNTYyZhPSYUfq0q0ir482YpbtjSvkO_mqaT8aRPr1cKg5gpQfPKVgmC'
   });
+  console.log("request",request);
   request.on('response', function(response) {
       console.log(response);
       res.send(response);
