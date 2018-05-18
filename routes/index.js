@@ -43,28 +43,28 @@ app.get('/', function(req, res){
   res.send('Hello Salesforce');
 });
 console.log("app.get");
-
-app.post('/chat', function(req, res){
-  console.log("app-post",req);
-
-  var request = apiapp.textRequest(req.body.chatText, {
-    sessionId: '0tjSXk.kNTYyZhPSYUfq0q0ir482YpbtjSvkO_mqaT8aRPr1cKg5gpQfPKVgmC'
-  });
-  console.log("request",request);
-  request.on('response', function(response) {
-      console.log(response);
-      res.send(response);
-  });
-  request.on('error', function(error) {
-      console.log(error);
-
-      res.send(error);
-  });
-  request.end();
-});
-
-// app.listen(port, function(){
-//   console.log('server started on Port 3000...')
+//
+// app.post('/chat', function(req, res){
+//   console.log("app-post",req);
+//
+//   var request = apiapp.textRequest(req.body.chatText, {
+//     sessionId: '0tjSXk.kNTYyZhPSYUfq0q0ir482YpbtjSvkO_mqaT8aRPr1cKg5gpQfPKVgmC'
+//   });
+//   console.log("request",request);
+//   request.on('response', function(response) {
+//       console.log(response);
+//       res.send(response);
+//   });
+//   request.on('error', function(error) {
+//       console.log(error);
+//
+//       res.send(error);
+//   });
+//   request.end();
 // });
+
+app.listen(port, function(){
+  console.log('server started on Port 3000...')
+});
 
 module.exports = app;
